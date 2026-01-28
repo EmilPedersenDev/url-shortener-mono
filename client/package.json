@@ -1,0 +1,12 @@
+{
+  "name": "@url-shortener/client",
+  "version": "1.0.0",
+  "description": "URL Shortener Client Application",
+  "main": "index.js",
+  "scripts": {
+    "start": "echo \"Client application - serve index.html\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

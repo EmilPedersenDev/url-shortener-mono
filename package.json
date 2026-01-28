@@ -1,0 +1,25 @@
+{
+  "name": "url-shortener-mono",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server",
+    "infra"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EmilPedersenDev/url-shortener-mono.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EmilPedersenDev/url-shortener-mono/issues"
+  },
+  "homepage": "https://github.com/EmilPedersenDev/url-shortener-mono#readme",
+  "description": ""
+}
