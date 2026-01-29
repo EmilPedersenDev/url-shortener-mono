@@ -1,6 +1,6 @@
  # AWS TypeScript Pulumi Template
 
- A minimal Pulumi template for provisioning AWS infrastructure using TypeScript. This template creates an Amazon S3 bucket and exports its name.
+ Pulumi project for URL shortener AWS infrastructure: Lambda functions for create/get short URL and an HTTP API Gateway.
 
  ## Prerequisites
 
@@ -10,7 +10,13 @@
 
  ## Getting Started
 
- 1. Initialize a new Pulumi project:
+ 1. Build the server Lambda handlers (from repo root):
+
+    ```bash
+    npm run build -w @url-shortener/server
+    ```
+
+ 2. Initialize a new Pulumi project (if not already):
 
     ```bash
     pulumi new aws-typescript
@@ -21,14 +27,14 @@
     - Project description
     - AWS region (defaults to `us-east-1`)
 
- 2. Preview and deploy your infrastructure:
+ 3. Preview and deploy your infrastructure (from the `infra` directory):
 
     ```bash
     pulumi preview
     pulumi up
     ```
 
- 3. When you're finished, tear down your stack:
+ 4. When you're finished, tear down your stack:
 
     ```bash
     pulumi destroy
@@ -38,7 +44,7 @@
  ## Project Layout
 
  - `Pulumi.yaml` — Pulumi project and template metadata
- - `index.ts` — Main Pulumi program (creates an S3 bucket)
+ - `index.ts` — Main Pulumi program (Lambdas + API Gateway)
  - `package.json` — Node.js dependencies
  - `tsconfig.json` — TypeScript compiler options
 
