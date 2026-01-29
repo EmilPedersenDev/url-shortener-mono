@@ -1,0 +1,17 @@
+{
+  "name": "@url-shortener/server",
+  "version": "1.0.0",
+  "description": "URL Shortener Server Application",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^25.0.10",
+    "typescript": "^5.9.3"
+  }
+}
