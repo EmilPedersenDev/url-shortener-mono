@@ -1,6 +1,8 @@
-export const handler = async (event: any) => {
+export const handler = async (
+  event: any,
+): Promise<{ statusCode: number; body: string }> => {
   return {
-    statusCode: 200,
-    body: JSON.stringify({ message: "Get short URL" }),
+    statusCode: 302,
+    body: JSON.stringify({ originalUrl: "https://www.google.com" }),
   };
 };

@@ -56,40 +56,16 @@ function isValidUrl(string) {
 
 // Shorten URL function
 async function shortenUrl(originalUrl) {
-  // TODO: Replace this with actual API call to your backend
-  // Example API call:
-  // const response = await fetch('/api/shorten', {
-  //     method: 'POST',
-  //     headers: {
-  //         'Content-Type': 'application/json',
-  //     },
-  //     body: JSON.stringify({ url: originalUrl })
-  // });
-  // const data = await response.json();
-  // return data.shortUrl;
-
-  // Mock implementation for now
-  // This generates a simple shortened URL based on the original URL
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      // Generate a simple hash-based short code
-      const shortCode = generateShortCode(originalUrl);
-      const baseUrl = window.location.origin;
-      resolve(`${baseUrl}/${shortCode}`);
-    }, 500); // Simulate network delay
+  const baseUrl = window.API_BASE_URL || "";
+  const response = await fetch(baseUrl, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ originalUrl }),
   });
-}
-
-// Generate a short code (simple hash-based approach)
-function generateShortCode(url) {
-  let hash = 0;
-  for (let i = 0; i < url.length; i++) {
-    const char = url.charCodeAt(i);
-    hash = (hash << 5) - hash + char;
-    hash = hash & hash; // Convert to 32-bit integer
-  }
-  // Convert to base36 and take first 7 characters
-  return Math.abs(hash).toString(36).substring(0, 7);
+  const data = await response.json();
+  return data.shortUrl;
 }
 
 // Show error message
