@@ -7,7 +7,6 @@
     window.API_BASE_URL = "http://localhost:3000";
   } else {
     // Production: set your real API URL, or use same-origin relative path
-    window.API_BASE_URL =
-      "https://your-api-id.execute-api.region.amazonaws.com";
+    window.API_BASE_URL = "https://emilpedersen.tech";
   }
 })();
